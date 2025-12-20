@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import CreateNotes from './components/CreateNotes';
+import GenerateTest from './components/GenerateTest';
+import SimplifyBook from './components/SimplifyBook';
+import Result from './pages/Result';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/create-notes" element={<CreateNotes />} />
+        <Route path="/generate-test" element={<GenerateTest />} />
+        <Route path="/simplify-book" element={<SimplifyBook />} />
+        <Route path="/result" element={<Result />} />
+      </Routes>
+    </Router>
   );
 }
 
