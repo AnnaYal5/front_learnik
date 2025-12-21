@@ -64,7 +64,7 @@ export default function CreateNotes() {
         complexity: formData.complexity,
         style: formData.style,
         font: formData.font,
-        size_font: formData.font_size
+        font_size: formData.font_size
       };
 
       const response = await fetch('https://d1ther.online/api/ai/generate-conspect/', {
